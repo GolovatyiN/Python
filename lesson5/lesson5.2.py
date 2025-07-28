@@ -17,3 +17,7 @@ while True:
             print(number1 / number2)
         else:
             print("Error: you can`t divide by zero")
+
+    again = input("Do you want to continue? (y/yes to continue): ").lower()
+    if again not in ("y", "yes"):
+        break
