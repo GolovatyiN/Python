@@ -1,22 +1,11 @@
+import string
+
 text = input("Enter your text: ")
+text = ''.join(c if c.isalpha() or c.isspace() else ' ' for c in text)
 
-result = ""
-word = ""
-
-for letter in text:
-
-    if letter.isalpha():
-        word += letter
-    else:
-
-        if word != "":
-            result += word[0].upper() + word[1:].lower()
-            word = ""
-
-if word != "":
-    result += word[0].upper() + word[1:].lower()
-
-hashtag = "#" + result
+words = text.split()
+capitalized = ''.join(word.capitalize() for word in words)
+hashtag = "#" + capitalized
 
 if len(hashtag) > 140:
     hashtag = hashtag[:140]
